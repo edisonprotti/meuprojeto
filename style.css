@@ -1,0 +1,199 @@
+/* CSS-base preparado para futura responsividade */
+
+/* O seletor universal '*' aplica estilos a todos os elementos da página */
+{
+  margin: 0; /* Remove a margem padrão de todos os elementos */
+  padding: 0; /* Remove o preenchimento padrão de todos os elementos */
+  box-sizing: border-box; /* Garante que padding e bordas não aumentem o tamanho total do elemento */
+}
+
+/* Aplica comportamento suave ao navegar por links internos (âncoras) */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Define a fonte principal do corpo da página e o estilo de backup */
+body {
+  font-family: 'Cormorant', serif;
+}
+
+/* Garante que imagens nunca ultrapassem a largura do seu container e se comportem como blocos */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Remove as bolinhas (bullets) padrão das listas não ordenadas */
+ul {
+  list-style: none;
+}
+
+/* Remove o sublinhado padrão dos links e faz com que herdem a cor do texto pai */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Classe utilitária para centralizar o conteúdo e limitar a largura máxima */
+.container {
+  width: min(90%, 1200px); /* Ocupa 90% da tela, mas trava em 1200px no máximo */
+  margin: 0 auto; /* Centraliza horizontalmente */
+}
+
+/* --- Seção de Menu --- */
+
+/* Define que a barra de menu ocupe toda a largura disponível */
+#menu {
+  width: 100%;
+}
+
+/* Organiza os itens do menu (logo e links) em linha com espaçamento entre eles */
+.menu-conteudo {
+  display: flex; /* Ativa o modelo Flexbox */
+  align-items: center; /* Alinha os itens verticalmente ao centro */
+  justify-content: space-between; /* Empurra a logo para a esquerda e o menu para a direita */
+  gap: 24px; /* Espaço mínimo entre os itens */
+  padding: 20px 0; /* Espaço interno em cima e embaixo */
+}
+
+/* Define a largura da imagem da logo */
+.logo img {
+  width: 140px;
+}
+
+/* Organiza a lista de links do menu em linha */
+.ul_menu {
+  display: flex;
+  align-items: center;
+  gap: 32px; /* Espaçamento entre cada link do menu */
+  flex-wrap: wrap; /* Permite que os itens quebrem de linha se não houver espaço */
+}
+
+/* Estilização visual dos textos do menu */
+.ul_menu a {
+  font-size: 16px;
+  font-weight: 600;
+  color: #000000;
+}
+
+/* Altera a cor do link quando o usuário passa o mouse (efeito hover) */
+.ul_menu a:hover {
+  color: #bb9230;
+}
+
+/* --- Seção Início (Hero) --- */
+
+/* Define a altura mínima e a imagem de fundo da seção principal */
+#inicio {
+  min-height: 700px; /* Garante uma altura de destaque */
+  background-image: url('imagens/fundo_inicio.jpg'); /* Define a imagem de fundo */
+  background-size: cover; /* Faz a imagem cobrir toda a área sem distorcer */
+  background-position: center; /* Centraliza a imagem de fundo */
+}
+
+/* --- Seção Sobre --- */
+
+/* (Nota: Com base no HTML, esta seção costuma ter textos e imagens) */
+.sobre-conteudo p {
+  font-weight: 300; /* Define uma espessura de fonte mais leve */
+  color: #545454; /* Cor cinza para o texto */
+  line-height: 1.6; /* Aumenta o espaçamento entre linhas para melhor leitura */
+}
+
+/* Organiza as fotos da seção 'Sobre' em duas colunas */
+.sobre-imagens {
+  display: grid; /* Ativa o modelo Grid */
+  grid-template-columns: repeat(2, 1fr); /* Cria duas colunas de tamanhos iguais */
+  gap: 12px; /* Espaço entre as fotos */
+}
+
+/* Padroniza o tamanho das imagens na seção sobre */
+.sobre-imagens img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover; /* Corta a imagem para preencher o espaço sem achatar */
+}
+
+/* --- Seção Produtos --- */
+
+/* Define a cor de fundo bege e o espaçamento da seção */
+#produtos {
+  background-color: #F5F2E3;
+  padding: 80px 0;
+}
+
+/* Estiliza o título principal da vitrine de produtos */
+.titulo_produtos {
+  font-size: 40px;
+  font-weight: 500;
+  color: #000000;
+  text-align: center; /* Centraliza o título */
+  margin-bottom: 50px; /* Espaço antes de começar a lista de produtos */
+}
+
+/* Cria a grade de exibição dos produtos */
+.grade_produtos {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Divide em 4 colunas iguais */
+  gap: 24px; /* Espaço entre os cards de produtos */
+}
+
+/* Estiliza cada "cartão" de produto individual */
+.produto-card {
+  background-color: #ffffff; /* Fundo branco para destacar do fundo bege */
+  padding: 18px;
+  text-align: center;
+}
+
+/* Formata a imagem dentro do card de produto */
+.produto-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  margin-bottom: 18px; /* Espaço entre imagem e nome */
+}
+
+/* Estiliza o nome do produto */
+.nome_produto {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+/* Estiliza o preço do produto */
+.preco_produto {
+  font-size: 20px;
+  color: #545454;
+}
+
+/* --- Seção Contato --- */
+
+/* Define o layout da seção de rodapé/contato */
+#contato {
+  padding: 60px 0;
+}
+
+/* Organiza a logo e as informações de contato */
+.contato-conteudo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Define o tamanho da logo no rodapé */
+.contato-logo img {
+  width: 180px;
+}
+
+/* Estiliza o título 'CONTATO' */
+h2.contato {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+/* Estiliza os itens da lista de contato (Endereço, Telefone, E-mail) */
+.lista_contato li {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #545454;
+}
